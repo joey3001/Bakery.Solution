@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using Bakery.Models;
 using Microsoft.AspNetCore.Identity;
 
@@ -18,29 +18,22 @@ namespace Bakery
           .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
+
     public IConfigurationRoot Configuration { get; set; }
+
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-          .AddDbContext<BakeryContext>(options => options
-          .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+        .AddDbContext<BakeryContext>(options => options
+        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
+      //new code
       services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<BakeryContext>()
-            .AddDefaultTokenProviders();
-
-      services.Configure<IdentityOptions>(options =>
-      {
-        options.Password.RequireDigit = false;
-        options.Password.RequiredLength = 0;
-        options.Password.RequireLowercase = false;
-        options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequireUppercase = false;
-        options.Password.RequiredUniqueChars = 0;
-      });      
-    } 
+                .AddEntityFrameworkStores<BakeryContext>()
+                .AddDefaultTokenProviders();
+    }
 
     public void Configure(IApplicationBuilder app)
     {
@@ -48,6 +41,7 @@ namespace Bakery
 
       app.UseDeveloperExceptionPage();
 
+      //new code
       app.UseAuthentication();
 
       app.UseMvc(routes =>
@@ -59,7 +53,7 @@ namespace Bakery
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Big Disaster!");
+        await context.Response.WriteAsync("Something went wrong!");
       });
     }
   }
