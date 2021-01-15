@@ -29,7 +29,6 @@ namespace Bakery
         .AddDbContext<BakeryContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
-      //new code
       services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<BakeryContext>()
                 .AddDefaultTokenProviders();
@@ -41,7 +40,6 @@ namespace Bakery
 
       app.UseDeveloperExceptionPage();
 
-      //new code
       app.UseAuthentication();
 
       app.UseMvc(routes =>
