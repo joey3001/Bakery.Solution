@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Bakery.ViewModels;
 using System.Linq;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Bakery.Controllers
 {

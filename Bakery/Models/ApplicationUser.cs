@@ -4,6 +4,5 @@ namespace Bakery.Models
 {
     public class ApplicationUser : IdentityUser
     {
-
     }
 }
