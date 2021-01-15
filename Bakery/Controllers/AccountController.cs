@@ -17,17 +17,14 @@ namespace Bakery.Controllers
       _signInManager = signInManager;
       _db = db;
     }
-
     public ActionResult Index()
     {
       return View();
     }
-
     public IActionResult Register()
     {
       return View();
     }
-
     [HttpPost]
     public async Task<ActionResult> Register (RegisterViewModel model)
     {
@@ -39,7 +36,7 @@ namespace Bakery.Controllers
       }
       else
       {
-          return View();
+          return View(result.Errors);
       }
     }
   }
