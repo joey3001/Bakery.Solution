@@ -10,6 +10,5 @@ namespace Bakery.Controllers
     {
       return View();
     }
-
   }
 }
