@@ -20,7 +20,7 @@ namespace Bakery.Controllers
       _signInManager = signInManager; 
       _db = db; 
     }
-    public async ActionResult Index()
+    public ActionResult Index()
     {
       return View();
     }
@@ -35,11 +35,11 @@ namespace Bakery.Controllers
       IdentityResult result = await _userManager.CreateAsync(user, model.Password);
       if (result.Succeeded)
       {
-          return RedirectToAction("Index");
+        return RedirectToAction("Index");
       }
       else
       {
-          return View();
+        return View();
       }
     }
   }
