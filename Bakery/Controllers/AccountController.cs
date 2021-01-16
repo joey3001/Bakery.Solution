@@ -22,7 +22,7 @@ namespace Bakery.Controllers
       _db = db;
     }
 
-    public async Task<ActionResult> Index()
+    public ActionResult Index()
     {
       return View();
     }
