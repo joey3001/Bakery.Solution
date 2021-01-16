@@ -30,8 +30,8 @@ namespace Bakery
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
 
       services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<BakeryContext>()
-                .AddDefaultTokenProviders();
+            .AddEntityFrameworkStores<BakeryContext>()
+            .AddDefaultTokenProviders();
     }
 
     public void Configure(IApplicationBuilder app)
