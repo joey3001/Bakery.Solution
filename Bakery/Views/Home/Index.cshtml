@@ -8,4 +8,7 @@
 <p>@Html.ActionLink("Create an account", "Register", "Account")</p>
 <p>@Html.ActionLink("View account", "Index", "Account")</p>
 <p>@Html.ActionLink("Log in", "Login", "Account")</p>
-<p>@Html.ActionLink("Log Off", "LogOff", "Account")</p>
+@using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" class="btn btn-danger btn-xs" value="Log out" />
+  } 
