@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model Bakery.Models.Flavor
+@model Bakery.Models.Treat
 
 <h2>Edit</h2>
 
@@ -10,13 +10,13 @@
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.FlavorId)
+  @Html.HiddenFor(model => model.TreatId)
 
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
 
-  @Html.Label("Select Treat")
-  @Html.DropDownList("TreatId")
+  @Html.Label("Select Flavor")
+  @Html.DropDownList("FlavorId")
 
   <input type="submit" value="Save" />
 }
