@@ -23,12 +23,14 @@ namespace Bakery.Controllers
       List<Flavor> model = _db.Flavors.ToList();
       return View(model);
     }
+    
     [Authorize]
     public ActionResult Create()
     {
       ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Description");
       return View();
     }
+
     [HttpPost]
     public ActionResult Create(Flavor flavor, int TreatId)
     {
@@ -48,6 +50,7 @@ namespace Bakery.Controllers
           .FirstOrDefault(flavor=> flavor.FlavorId == id);
       return View(thisFlavor);
     }
+
     [Authorize]
     public ActionResult Edit(int id)
     {
@@ -84,6 +87,7 @@ namespace Bakery.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
     [Authorize]
     public ActionResult Delete(int id)
     {
@@ -99,6 +103,7 @@ namespace Bakery.Controllers
       _db.SaveChanges(); 
       return RedirectToAction("Index"); 
     }
+
     [Authorize]
     [HttpPost]
     public ActionResult DeleteTreat(int joinId)
