@@ -63,7 +63,7 @@ namespace Bakery.Controllers
     {
       if (FlavorId != 0)
       {
-        _db.TreatFlavor.Add(new TreatFlavor() {Flavor = FlavorId, TreatId = treat.TreatId});
+        _db.TreatFlavor.Add(new TreatFlavor() {FlavorId = FlavorId, TreatId = treat.TreatId});
       }
       _db.Entry(treat).State = EntityState.Modified; 
       _db.SaveChanges();  

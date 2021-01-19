@@ -23,7 +23,7 @@ namespace Bakery.Controllers
       List<Flavor> model = _db.Flavors.ToList();
       return View(model);
     }
-    
+
     [Authorize]
     public ActionResult Create()
     {
@@ -73,7 +73,7 @@ namespace Bakery.Controllers
     public ActionResult AddTreat(int id) 
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Description");
       return View(thisFlavor);
     }
     
