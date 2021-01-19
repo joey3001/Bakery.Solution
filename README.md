@@ -104,6 +104,7 @@ If you have an issue, reach out to me at josephnero111@gmail.com
   * C# V7.3
   * MySQL & MySQL Workbench 
   * Entity Framework
+  * Identity Framework
   * .NET Core V2.2
   * dotnet script REPL
   * VSCode 
