@@ -48,7 +48,7 @@ This application utilizes the Entity framework to setup and manipulate an SQL da
 
 #### To set up the Database and run the project using terminal commands, follow the instructions below : 
 
-1. In the "Factory" directory, update the text in the appsettings.json file to include your MySQL password. You should have made this password when you downloaded/setup MySQL & MySQL workbench. An example is included below : 
+1. In the "Bakery" directory, update the text in the appsettings.json file to include your MySQL password. You should have made this password when you downloaded/setup MySQL & MySQL workbench. An example is included below : 
 
             {
               "ConnectionStrings": {
