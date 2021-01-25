@@ -17,7 +17,7 @@ This application utilizes the Entity framework to setup and manipulate an SQL da
 2. VSCode (or another code editor)
     - To view/edit this code, you need a code editor. I recommend VSCode. 
 
-3. For Detailed instructions on how to install Git Bash & VSCode, visit the Setup/Installation Requirements section of the README for [this repo.](https://github.com/joey3001/Bakery.Solution)
+3. For Detailed instructions on how to install Git Bash & VSCode, visit the Setup/Installation Requirements section of the README for [this repo.](https://github.com/joey3001/first-friday-project)
 
 4. C# & .NetCore
     - To run this project you will need C# & .NET Core. You can check if you have these installed by entering the following command into your terminal program :
